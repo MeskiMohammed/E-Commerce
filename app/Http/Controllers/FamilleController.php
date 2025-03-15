@@ -31,11 +31,11 @@ class FamilleController extends Controller
         // $imageName = time().'.'.$request->image->extension();
         // $request->image->move(public_path('images'), $imageName);
 
-        $imageName = $request->file('image')->store('public/images');
+        $imageName = $request->file('image')->store('images','public');
 
         $famille = new Famille();
         $famille->libelle = $request->libelle;
-        $famille->image = $imageName;
+        $famille->image = 'storage/'.$imageName;
         $famille->save();
         return redirect(route('familles.index'));
     }
