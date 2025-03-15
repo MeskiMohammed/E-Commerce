@@ -27,6 +27,8 @@
     <!-- TW Styling -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> -->
     <!-- sidenav burger -->
     <!-- <script src="{{asset('assets/js/sidenav-burger.js')}}" async></script> -->
     

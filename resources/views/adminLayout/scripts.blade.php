@@ -9,6 +9,8 @@
 <!-- Perfect Scrollbar -->
 <script src="{{asset('assets/js/perfect-scrollbar.js')}}" async defer></script>
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
+
 <script src="{{asset('assets/js/sidenav-burger.js')}}" async></script>
 <script src="{{asset('assets/js/navbar-sticky.js')}}" async></script>
 
