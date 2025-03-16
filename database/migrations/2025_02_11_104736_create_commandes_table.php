@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('etat_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

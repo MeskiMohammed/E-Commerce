@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('tel');
-            $table->boolean('isAdmin')->default(0);
+            $table->enum('role',['client','livreur','admin'])->default('client');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

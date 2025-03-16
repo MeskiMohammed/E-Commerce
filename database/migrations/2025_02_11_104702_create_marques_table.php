@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('marque');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

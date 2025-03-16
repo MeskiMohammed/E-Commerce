@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('unites', function (Blueprint $table) {
+        Schema::create('achats', function (Blueprint $table) {
             $table->id();
-            $table->string('unite');
+            $table->date('date');
+            $table->text('observation');
+            $table->foreignId(column: 'fournisseur_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('unites');
+        Schema::dropIfExists('achats');
     }
 };

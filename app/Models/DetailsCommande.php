@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DetailsCommande extends Model
 {
     use HasFactory;
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1227944526.
+    use SoftDeletes;
+
     public function commande(){
         return $this->belongsTo(Commande::class);
     }

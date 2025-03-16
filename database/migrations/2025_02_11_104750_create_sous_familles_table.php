@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->foreignId('famille_id')->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

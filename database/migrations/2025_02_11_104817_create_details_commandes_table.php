@@ -19,6 +19,7 @@ return new class extends Migration
             $table->double('prix_ht');
             $table->double('tva');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

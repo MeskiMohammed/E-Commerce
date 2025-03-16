@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('unites', function (Blueprint $table) {
+        Schema::create('details_achats', function (Blueprint $table) {
             $table->id();
-            $table->string('unite');
+            $table->foreignId('achat_id')->constrained();
+            $table->foreignId('produit_id')->constrained();
+            $table->integer('quantite');
+            $table->float('prix_ht');
+            $table->float('tva');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('unites');
+        Schema::dropIfExists('details_achats');
     }
 };

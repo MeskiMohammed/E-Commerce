@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('unite_id')->constrained();
             $table->bigInteger('stock');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
