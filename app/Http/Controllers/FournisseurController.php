@@ -12,7 +12,8 @@ class FournisseurController extends Controller
      */
     public function index()
     {
-        //
+        $fournisseurs = Fournisseur::all();
+        return view('fournisseurs.index', compact('fournisseurs'));
     }
 
     /**
@@ -20,7 +21,7 @@ class FournisseurController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,7 +29,8 @@ class FournisseurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Fournisseur::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -60,6 +62,7 @@ class FournisseurController extends Controller
      */
     public function destroy(Fournisseur $fournisseur)
     {
-        //
+        $fournisseur->delete();
+        return redirect()->back();
     }
 }

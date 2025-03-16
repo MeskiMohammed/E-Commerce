@@ -58,15 +58,10 @@
             </tr>
             @empty
             <tr>
-                <td colspan="8" class="bg-gray-100 rounded-b-2xl">pas d'utilisateurs</td>
+                <td colspan="8" class="rounded-b-2xl p-2 font-bold">pas d'utilisateurs</td>
             </tr>
             @endforelse
         </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="8" class="bg-gray-100 rounded-b-2xl">hello foot</td>
-            </tr>
-        </tfoot>
     </table>
 </div>
 @endsection

@@ -1,21 +1,31 @@
 @extends('adminLayout.app')
-@section('title', 'Commandes')
-@section('mini title', 'Commandes')
+@section('title', 'Fournisseurs')
+@section('mini title', 'Fournisseurs')
 @section('adminContent')
     <div class="w-full flex flex-col">
+
+        <form action="{{ route('fournisseurs.store') }}" method="post" enctype="multipart/form-data"
+            class="w-full flex justify-end items-center">
+            @csrf
+            <label for="fournisseur">fournisseur :</label>
+            <input type="text" name="nom" class="border rounded m-2">
+            <button type="submit"
+                class="bg-cyan-600 hover:bg-cyan-500 cursor-pointer text-white font-bold py-2 px-4 rounded">Ajouter</button>
+        </form>
+
         <table class="w-full text-center mt-4 h-10 overflow-y-auto">
             <thead>
                 <tr>
-                    <th class="bg-gray-200 py-2 rounded-tl-2xl">commande</th>
+                    <th class="bg-gray-200 py-2 rounded-tl-2xl">fournisseur</th>
                     <th class="bg-gray-200 py-2 rounded-tr-2xl">Action</th>
                 </tr>
             </thead>
             <tbody class="bg-gray-100">
-                @forelse($commandes as $commande)
+                @forelse($fournisseurs as $fournisseur)
                     <tr class="hover:bg-slate-200">
-                        <td class="py-4">{{ $marque->marque }}</td>
-                        <td class="py-4 w-min">
-                            <form action="{{route('commandes.destroy', $marque)}}" method="post">
+                        <td class="py-4 {{$loop->last?'rounded-bl-2xl':''}}">{{ $fournisseur->nom }}</td>
+                        <td class="py-4 w-min {{$loop->last?'rounded-br-2xl':''}}">
+                            <form action="{{route('fournisseurs.destroy', $fournisseur)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">
@@ -39,7 +49,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan='2' class='rounded-b-2xl p-2 font-bold'>pas des commandes</td>
+                        <td colspan='2' class='rounded-b-2xl p-2 font-bold'>pas des fourniseurs</td>
                     </tr>
                 @endforelse
             </tbody>

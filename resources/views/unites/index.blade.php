@@ -8,7 +8,7 @@
         @csrf
         <label for="unite">unite :</label>
         <input type="text" name="unite" class="border rounded m-2">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded cursor-pointer">Ajouter</button>
+        <button type="submit" class="bg-cyan-600 hover:bg-cyan-500 cursor-pointer text-white font-bold py-2 px-4 rounded">Ajouter</button>
     </form>
 
     <table class="w-full text-center mt-4 h-10 overflow-y-auto">

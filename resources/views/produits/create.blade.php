@@ -1,6 +1,8 @@
 @extends('adminLayout.app')
+@section('title', 'produits')
+@section('mini title', 'produits')
 @section('adminContent')
-<form action="{{route('products.create')}}" method="post">
+<form action="{{route('produits.store')}}" method="post">
 
 </form>
 @endsection
